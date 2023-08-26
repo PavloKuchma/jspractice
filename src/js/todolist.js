@@ -1,3 +1,5 @@
+import throttle from 'lodash.throttle';
+
 const form = document.querySelector('.todo');
 const list = document.querySelector('.todo__items');
 const KEY = 'todo';
@@ -7,7 +9,7 @@ if (data) {
     form[key].value = data[key];
   }
 }
-form.addEventListener('input', saveData);
+form.addEventListener('input', throttle(saveData, 500));
 form.addEventListener('submit', onSubmit);
 
 function saveData(event) {
