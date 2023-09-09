@@ -1,2 +1,2 @@
 import './js/todolist';
-import './js/promises'
+import './js/promises';
